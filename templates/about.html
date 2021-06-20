@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<br>
+<br>
+<br>
+<h1>Project Concept</h1>
+<br>
+<h3 class="text-danger"><b>Static Analysis</b></h3>
+<p><b>Swift Results and No Requirements for Analysis</b></p>
+<p class="text-justify">Unlike dynamic analysis, static analysis looks at the contents of a specific file as it exists on a disk, rather than as it is detonated. It parses data, extracting patterns, attributes and artifacts, and flags anomalies.&nbsp;</p>
+<p class="text-justify">Static analysis is resilient to the issues that dynamic analysis presents. It is extremely efficient – taking only a fraction of a second – and much more cost-effective. Static analysis can also work for any file because there are no specific requirements, environments that need to be tailored, or outgoing communications needed from the file for analysis to happen.</p>
+<p><b>Packed Files Result in Lost Visibility</b></p>
+<p class="text-justify">However, static analysis can be evaded relatively easily if the file is packed. While packed files work fine in dynamic analysis, visibility into the actual file is lost during static analysis as the repacking the sample turns the entire file into noise. What can be extracted statically is next to nothing.</p>
+<p>&nbsp;</p>
+<h3 class="text-danger"><b>Machine Learning</b></h3>
+<p><b>New Versions of Threats Clustered With Known Threats Based on Behavior</b></p>
+<p class="text-justify">Rather than doing specific pattern-matching or detonating a file, machine learning parses the file and extracts thousands of features. These features are run through a classifier, also called a feature vector, to identify if the file is good or bad based on known identifiers. Rather than looking for something specific, if a feature of the file behaves like any previously assessed cluster of files, the machine will mark that file as part of the cluster. For good machine learning, training sets of good and bad verdicts is required, and adding new data or features will improve the process and reduce false positive rates.</p>
+<p class="text-justify">Machine learning compensates for what dynamic and static analysis lack. A sample that is inert, doesn’t detonate, is crippled by a packer, has command and control down, or is not reliable can still be identified as malicious with machine learning. If numerous versions of a given threat have been seen and clustered together, and a sample has features like those in the cluster, the machine will assume the sample belongs to the cluster and mark it as malicious in seconds.<b></b></p>
+<p><b>Only Able to Find More of What Is Already Known</b></p>
+<p class="text-justify">Like the other two methods, machine learning should be looked at as a tool with many advantages, but also some disadvantages. Namely, machine learning trains the model based on only known identifiers. Unlike dynamic analysis, machine learning will never find anything truly original or unknown. If it comes across a threat that looks nothing like anything its seen before, the machine will not flag it, as it is only trained to find more of what is already known.&nbsp;</p>
+<p><b>Layered Techniques in a Platform</b></p>
+<p class="text-justify">To thwart whatever advanced adversaries can throw at you, you need more than one piece of the puzzle. You need layered techniques – a concept that used to be a multivendor solution. While defense in depth is still appropriate and relevant, it needs to progress beyond multivendor point solutions to a platform that integrates static analysis, dynamic analysis and machine learning. All three working together can actualize defense in depth through layers of integrated solutions.</p>
+<p>&nbsp;</p>
+
+{% endblock content%}
+    

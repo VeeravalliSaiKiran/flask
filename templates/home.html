@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+<br>
+<br>
+<br>
+    <h2 class="text-danger">The Methodology...</h2>
+    <p class="text-justify">The methodology of machine learning
+       classification is divided into three
+        stage cycles as depicted below.
+       (Learning, Features Extraction and 
+       Detection). At the end of each cycle, 
+       the results that are verified as 
+       malicious by human analysts are used 
+       as feedback to further improve the 
+       classifier for the subsequent cycle.</p>
+        <img src="{{ url_for('static', filename='process.png') }}"  class="img-fluid img-thumbnail">
+{% endblock %}   
+ 

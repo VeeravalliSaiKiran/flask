@@ -1,0 +1,35 @@
+
+        {% extends "layout.html" %}
+        {% block content %}
+        <br>
+        <br>
+        <br>
+        <div class="container pt-2 pl-2">
+        <h1 class="text-danger">Upload Files</h1>
+        
+        <div id="dropzone">
+        <form action="{{url_for('upload_file')}}" class="dropzone" >
+               
+        </form>
+
+        </div>
+        <br><br>
+                <form method="POST" action="{{url_for('delete')}}">
+                      <div><input type="submit" value="Delete" class="btn btn-outline-danger btn-lg shadow  mb-2  rounded"></div>         
+                </form>
+        
+                <form method="POST" action="{{url_for('extract')}}">
+                        <div><input type="submit" value="Extract" class="btn btn-outline-success btn-lg shadow  mb-2  rounded"></div>
+                </form> 
+     
+                <br>
+        <h4>Saved Files</h4><br>
+        {% for file in upfiles %}
+        <div class="d-inline p-1 bg-info text-white">{{file}}</div> 
+        {% endfor %} 
+       
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/dropzone.min.js" integrity="sha512-llCHNP2CQS+o3EUK2QFehPlOngm8Oa7vkvdUpEFN71dVOf3yAj9yMoPdS5aYRTy8AEdVtqUBIsVThzUSggT0LQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        </div>
+        {% endblock %}
+ 

@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block content %}
+<br>
+<br>
+<br>
+<h2>Select the classfier to detect!</h2>
+<br> 
+<form method="POST" action = "{{url_for('predictions')}}" class="d-flex flex-row  justify-content-start">
+    <div><input type="submit" value="K-Nearest_neighbours" name="alog3"class="btn btn-outline-warning btn-sm shadow  mb-2  rounded"></div>     
+    <div><input type="submit" value="Logistic_Regression" name="algo2" class="btn btn-outline-dark btn-sm shadow  mb-2  rounded"></div>
+    <div><input type="submit" value="Random_Forest" name="algo1" class="btn btn-outline-success btn-sm shadow  mb-2  rounded"></div> 
+</form>
+
+<br>
+<br>
+<div class="d-flex flex-row bd-highlight mb-3">
+<div class="p-2 bd-highlight border">
+<h3 class="bg-danger text-white text-center"> Malware </h3>
+<br>
+{% for i in range(0,res|length) %}
+{% if res[i]==1 %}
+<p class="text-danger text-center">{% print("{}".format(f_name[i])) %}</p>
+{% endif %}
+{% endfor %}
+</div>
+<div class="p-2 bd-highlight border">
+<h3 class="bg-success text-white text-center"> Benign </h3>
+<br>
+{% for i in range(0,res|length) %}
+{% if res[i]==0 %}
+<p class="text-info text-center">{% print("{}".format(f_name[i])) %}</p>
+{% endif %}
+{% endfor %}
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+    {% extends "layout.html" %}
+    {% block contentA %}
+
+    
+    <!-- class="p-1 mb-2 bg-warning text-dark display-4 text-center text-wrap --> 
+        <div class="mt-5 p-4 w-100">
+          <h1 class="text-center text-wrap text-danger">Extracted PE features</h1>
+            <table id="proxies" class="display table nowrap responsive,table-dark," style="width: 50%;">
+              <thead class="thead-dark">
+                <tr>
+                  {% for header in myList[0].keys() %}
+                    <th class="col-xs-1">{{header}}</th>
+                  {% endfor %}
+                </tr>
+              </thead>
+              <tbody>
+                {% for row in myList %}
+                  <tr>
+                    {% for index in range(0, len(fieldnames)) %}
+                      <td>{{row[fieldnames[index]]}}</td>
+                    {% endfor %}
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>  
+        </div>
+       
+  <script type="text/javascript">
+    $('#proxies').DataTable({
+        scrollY:        "500px",
+        scrollX:        true,
+        scrollCollapse: true,
+        paging:         true,
+        columnDefs: [
+          { sWidth: "10%", aTargets: [  1,2,3,4,5,6 ] },
+        ],
+        
+    } );
+  </script>
+  {% endblock contentA %}
+
+
+
+

@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block content %}
+<br>
+<br>
+<br>
+<div class="team-boxed">
+    <div class="container">
+        <div class="intro">
+            <br>
+            <p class="text-center">“None of us is as smart as all of us.”</p>
+        </div>
+        <div class="row people">
+            <div class="col-md-6 col-lg-4 item">
+                <div class="box"><img class="rounded-circle" src="{{ url_for('static', filename='img1160x160.jpg') }}">
+                    <h3 class="name">B. Dinesh</h3>
+                    <p class="title">Analyst</p>
+                    <p class="description">17AG1A0511</p>
+                    <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 item">
+                <div class="box"><img class="rounded-circle" src="{{ url_for('static', filename='img2160x160.jpg') }}">
+                    <h3 class="name">V. Sai kiran</h3>
+                    <p class="title">Analyst</p>
+                    <p class="description">17AG1A0518</p>
+                    <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 item">
+                <div class="box"><img class="rounded-circle" src="{{ url_for('static', filename='img3160x160.jpg') }}">
+                    <h3 class="name">k. Vineeth</h3>
+                    <p class="title">Analyst</p>
+                    <p class="description">18AG5A0508</p>
+                    <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
