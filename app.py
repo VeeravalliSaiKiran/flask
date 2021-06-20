@@ -14,6 +14,7 @@ app.config['SECRET_KEY']='a968f87af924f50ad1edc9bc42ea3010'
 app.config['MAX_CONTENT_LENGTH']= 1024*1024*1024
 app.config['UPLOAD_EXTENSIONS']= ['.exe','.dll']
 app.config['UPLOAD_PATH']= 'uploads' 
+app.config['EXTRACT_INFO']='csv_files'
 
 @app.route('/',methods=['GET','POST'])
 def hello():
@@ -174,7 +175,7 @@ def extract():
                     'ImageDirectoryEntryExport','ImageDirectoryEntryImport','ImageDirectoryEntrySecurity']
     
     #writing values to extract.csv located in csv_files directory
-    csv_file = "C:/Users/ADMIN/Desktop/malware/virtualenv/malware/csv_files/extract.csv"
+    csv_file = app.config['EXTRACT_INFO']+"extract.csv"
     try:
         with open(csv_file,'w',newline='') as csvfile:
             writer = csv.DictWriter(csvfile,fieldnames=csv_columns)
@@ -193,7 +194,7 @@ def extract():
 @app.route('/delete',methods=['GET', 'POST'])
 def delete():
     # Directory name 
-    dir = 'C:\\Users\\ADMIN\\Desktop\\malware\\virtualenv\\malware\\uploads'
+    dir = app.config['EXTRACT_INFO']
     files = os.listdir(dir)
     for f in files:
         os.remove(os.path.join(dir, f))
