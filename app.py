@@ -194,7 +194,7 @@ def extract():
 @app.route('/delete',methods=['GET', 'POST'])
 def delete():
     # Directory name 
-    dir = app.config['EXTRACT_INFO']
+    dir = app.config['UPLOAD_PATH']
     files = os.listdir(dir)
     for f in files:
         os.remove(os.path.join(dir, f))
@@ -214,7 +214,7 @@ def filename(path):
 @app.route('/predictions', methods=['GET','POST'])
 def predictions():
 
-    input = pd.read_csv("csv_files\\extract.csv")
+    input = pd.read_csv(app.config['EXTRACT_INFO']+"extract.csv")
     for feature in input.columns:
         input[feature]=np.log1p(input[feature])
 
